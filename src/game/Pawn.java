@@ -31,6 +31,10 @@ public class Pawn implements Piece{
 		
 	}
 	
+	public void isCaptured() {
+		
+	}
+	
 	//Gets the piece on the squares that a pawn can move to
 	//In this case, a pawn needs to get pieces in front and on the left or right
 	public List<Square> getLegalMoves(Board b) {
