@@ -18,8 +18,6 @@ public class MyCanvas extends JPanel
    // Define thread variable for animation
    private Thread anim = new Thread(new UpdateScreen());
 
-private int currX;
-private int currY;
    
    /**
    Constructor for our MyCanvas class
