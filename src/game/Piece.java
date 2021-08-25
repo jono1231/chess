@@ -11,4 +11,5 @@ public interface Piece{
 	//In theory this returns for all places a piece can move
 	//Null if the square is empty, and a piece if it isn't
 	List<Square> getLegalMoves(Board b);
+	String toString();
 }

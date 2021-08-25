@@ -13,6 +13,9 @@ public class Pawn implements Piece{
 		yPos = yStart;
 		color = pColor;
 	}
+	public Pawn(boolean isWhite) {
+		color = isWhite;
+	}
 
 	//Move method - returns true if attempted move is possible
 	//returns false if attempted move isn't possible
@@ -40,6 +43,10 @@ public class Pawn implements Piece{
 	public List<Square> getLegalMoves(Board b) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	
+	public String toString() {
+		return "p";
 	}
 
 }
