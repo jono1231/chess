@@ -19,7 +19,7 @@ public class Pawn implements Piece{
 
 	//Move method - returns true if attempted move is possible
 	//returns false if attempted move isn't possible
-	public boolean move(int x1, int y1) {
+	public boolean move(Square s) {
 		
 		return false;
 	}

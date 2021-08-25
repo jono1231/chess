@@ -2,6 +2,7 @@ package game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.awt.geom.*;
 import java.util.Random;
 
@@ -16,6 +17,9 @@ public class MyCanvas extends JPanel
    
    // Define thread variable for animation
    private Thread anim = new Thread(new UpdateScreen());
+
+private int currX;
+private int currY;
    
    /**
    Constructor for our MyCanvas class
@@ -78,6 +82,7 @@ public class MyCanvas extends JPanel
       }
       
    }
+
    
    // *********************************************************************************************
    // *********************************************************************************************

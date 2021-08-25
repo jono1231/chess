@@ -10,7 +10,7 @@ public class Rook implements Piece {
 	}
 	
 	@Override
-	public boolean move(int x1, int y1) {
+	public boolean move(Square s) {
 		// TODO Auto-generated method stub
 		return false;
 	}

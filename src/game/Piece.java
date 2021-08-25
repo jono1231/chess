@@ -3,7 +3,7 @@ package game;
 import java.util.List;
 
 public interface Piece{
-	boolean move(int x1, int y1);
+	boolean move(Square s);
 	boolean getColor();
 	void draw();
 	void isCaptured();
