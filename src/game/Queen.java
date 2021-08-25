@@ -19,7 +19,7 @@ public class Queen implements Piece {
 	@Override
 	public boolean getColor() {
 		// TODO Auto-generated method stub
-		return false;
+		return color;
 	}
 
 	@Override

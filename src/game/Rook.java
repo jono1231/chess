@@ -1,5 +1,6 @@
 package game;
 
+import java.util.LinkedList;
 import java.util.List;
 
 public class Rook implements Piece {
@@ -29,14 +30,15 @@ public class Rook implements Piece {
 
 	@Override
 	public void isCaptured() {
-		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
 	public List<Square> getLegalMoves(Board b) {
-		// TODO Auto-generated method stub
-		return null;
+		LinkedList<Square> possMoves = new LinkedList<Square>();
+		
+		
+		return possMoves;
 	}
 	
 	public String toString() {
