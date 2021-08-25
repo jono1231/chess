@@ -33,6 +33,12 @@ public class Board {
 		}
 	}
 	
+	//boardState getter method
+	public Square[][] getBoardState() {
+		return pieces;
+	}
+	
+	
 	//Helper method that resets the board, slow and clunky but works
 	//Super dumb code
 	//TODO: add coords later
