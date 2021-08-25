@@ -2,10 +2,10 @@ package game;
 
 import java.util.List;
 
-public class King implements Piece {
-	private boolean color;
+public class Rook implements Piece {
 	
-	public King(boolean isWhite) {
+	private boolean color;
+	public Rook(boolean isWhite) {
 		color = isWhite;
 	}
 	
@@ -24,13 +24,13 @@ public class King implements Piece {
 	@Override
 	public void draw() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void isCaptured() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -38,9 +38,9 @@ public class King implements Piece {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+	
 	public String toString() {
-		return "K";
+		return "R";
 	}
 
 }

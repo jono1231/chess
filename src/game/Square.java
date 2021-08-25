@@ -16,6 +16,9 @@ public class Square {
 		occPiece = curPiece;
 		b = bPointer;
 	}
+	public Square(Board bPointer) {
+		b = bPointer;
+	}
 	
 	//Getter methods
 	public boolean isOccupied() {
@@ -55,6 +58,8 @@ public class Square {
 		if(occPiece == null) {
 			return " ";
 		}
-		return occPiece.toString();
+		else {
+			return occPiece.toString();
+		}
 	}
 }
