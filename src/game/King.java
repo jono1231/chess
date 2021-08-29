@@ -2,10 +2,10 @@ package game;
 
 import java.util.List;
 
-public class King implements Piece {
-	private boolean color;
+public class King extends Piece {
+	private int color;
 	
-	public King(boolean isWhite) {
+	public King(int isWhite) {
 		color = isWhite;
 	}
 	
@@ -16,7 +16,7 @@ public class King implements Piece {
 	}
 
 	@Override
-	public boolean getColor() {
+	public int getColor() {
 		// TODO Auto-generated method stub
 		return color;
 	}

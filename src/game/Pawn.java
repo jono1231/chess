@@ -2,18 +2,18 @@ package game;
 
 import java.util.List;
 
-public class Pawn implements Piece{
+public class Pawn extends Piece{
 	private int xPos;
 	private int yPos;
-	private boolean color;
+	private int color;
 	
 	//Constructor method
-	public Pawn(int xStart, int yStart, boolean pColor) {
+	public Pawn(int xStart, int yStart, int pColor) {
 		xPos = xStart;
 		yPos = yStart;
 		color = pColor;
 	}
-	public Pawn(boolean isWhite) {
+	public Pawn(int isWhite) {
 		color = isWhite;
 	}
 
@@ -25,7 +25,7 @@ public class Pawn implements Piece{
 	}
 
 	//Hurr Durr
-	public boolean getColor() {
+	public int getColor() {
 		return color;
 	}
 	

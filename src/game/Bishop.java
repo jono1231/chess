@@ -2,11 +2,11 @@ package game;
 
 import java.util.List;
 
-public class Bishop implements Piece {
+public class Bishop extends Piece {
 
-	private boolean color;
+	private int color;
 	
-	public Bishop(boolean isWhite) {
+	public Bishop(int isWhite) {
 		color = isWhite;
 	}
 	
@@ -17,9 +17,9 @@ public class Bishop implements Piece {
 	}
 
 	@Override
-	public boolean getColor() {
+	public int getColor() {
 		// TODO Auto-generated method stub
-		return false;
+		return color;
 	}
 
 	@Override

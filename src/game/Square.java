@@ -37,7 +37,7 @@ public class Square {
 	//Piece capture method - will return true of piece set is success
 	//returns false if isn't
 	//IMPORTANT: This method assumes that piece can legally move to the square
-	private boolean setPiece(Piece p) {
+	public boolean setPiece(Piece p) {
 		if(occPiece == null) {
 			occPiece = p;
 			return true;

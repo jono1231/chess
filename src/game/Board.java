@@ -8,7 +8,7 @@ public class Board {
 	private LinkedList<Piece> bPieces;
     private LinkedList<Piece> wPieces;
         
-    private boolean wTurn = true;
+    private int curTurn = 1;
     private Square[][] pieces;
     
     //Initialize board
@@ -45,40 +45,40 @@ public class Board {
 	private void populateBoard() {
 		//Pawns
     	for(int i = 0; i < pieces.length; i++) {
-    		Square wPawn = new Square(1,i,new Pawn(false),this);
-    		Square bPawn = new Square(6,i,new Pawn(true),this);
+    		Square wPawn = new Square(1,i,new Pawn(1),this);
+    		Square bPawn = new Square(6,i,new Pawn(2),this);
     		
     		pieces[1][i] = wPawn;
     		pieces[6][i] = bPawn;
     	}
     	
     	//Kings
-    	Square wKing = new Square(0,4,new King(true), this);
-    	Square bKing = new Square(7,4,new King(false), this);
+    	Square wKing = new Square(0,4,new King(1), this);
+    	Square bKing = new Square(7,4,new King(2), this);
     	pieces[0][4] = wKing;
     	pieces[7][4] = bKing;
     	
     	//Queens
-    	Square wQueen = new Square(0,3,new Queen(true), this);
-    	Square bQueen = new Square(7,3,new Queen(false), this);
+    	Square wQueen = new Square(0,3,new Queen(1), this);
+    	Square bQueen = new Square(7,3,new Queen(2), this);
     	pieces[0][3] = wQueen;
     	pieces[7][3] = bQueen;
     	
     	//Knights
-    	Square wKnight1 = new Square(0,1,new Knight(true), this);
-    	Square bKnight1 = new Square(7,1,new Knight(false), this);
-    	Square wKnight2 = new Square(0,6,new Knight(true), this);
-    	Square bKnight2 = new Square(7,6,new Knight(false), this);
+    	Square wKnight1 = new Square(0,1,new Knight(1), this);
+    	Square bKnight1 = new Square(7,1,new Knight(2), this);
+    	Square wKnight2 = new Square(0,6,new Knight(1), this);
+    	Square bKnight2 = new Square(7,6,new Knight(2), this);
     	pieces[0][1] = wKnight1;
     	pieces[7][1] = bKnight1;
     	pieces[0][6] = wKnight2;
     	pieces[7][6] = bKnight2;
     	
     	//Rooks
-    	Square wRook1 = new Square(0,0,new Rook(true), this);
-    	Square bRook1 = new Square(7,0,new Rook(false), this);
-    	Square wRook2 = new Square(0,7,new Rook(true), this);
-    	Square bRook2 = new Square(7,7,new Rook(false), this);
+    	Square wRook1 = new Square(0,0,new Rook(1,0,0), this);
+    	Square bRook1 = new Square(7,0,new Rook(2,7,0), this);
+    	Square wRook2 = new Square(0,7,new Rook(1,0,7), this);
+    	Square bRook2 = new Square(7,7,new Rook(2,7,7), this);
     	pieces[0][0] = wRook1;
     	pieces[7][0] = bRook1;
     	pieces[0][7] = wRook2;
@@ -86,10 +86,10 @@ public class Board {
 
     	
     	//Bishops
-    	Square wBish1 = new Square(0,2,new Bishop(true), this);
-    	Square bBish1 = new Square(7,2,new Bishop(false), this);
-    	Square wBish2 = new Square(0,5,new Bishop(true), this);
-    	Square bBish2 = new Square(7,5,new Bishop(false), this);
+    	Square wBish1 = new Square(0,2,new Bishop(1), this);
+    	Square bBish1 = new Square(7,2,new Bishop(2), this);
+    	Square wBish2 = new Square(0,5,new Bishop(1), this);
+    	Square bBish2 = new Square(7,5,new Bishop(2), this);
     	pieces[0][2] = wBish1;
     	pieces[7][2] = bBish1;
     	pieces[0][5] = wBish2;
@@ -110,7 +110,7 @@ public class Board {
 	//Gets all legal moves for the turn
 	public List<Square> getLegalMoves(){
 		LinkedList<Square> moves = new LinkedList<Square>();
-		if(wTurn) {
+		if(curTurn%2 == 1) {
 			for(Piece p : wPieces) {
 				for(Square move : p.getLegalMoves(this)) {
 					moves.add(move);
@@ -127,16 +127,32 @@ public class Board {
 		return moves;
 	}
 	
+	public Square getSquare(int x, int y) {
+		return pieces[x][y];
+	}
+	
 	//returns true if move was possible, returns false if it isnt.
 	//Note this code doesn't do checks/checkmates yet, 
 	//Im planning to have separate detection for that
 	public boolean move(Piece p, Square s) {
-		if(p.getColor()!=wTurn||!p.getLegalMoves(this).contains(s)) {
+		if(p.getColor()%2!=curTurn%2||!p.getLegalMoves(this).contains(s)) {
 			return false;
 		}
 		p.move(s);
-		wTurn = !wTurn;
+		curTurn = 1+curTurn;	
 		
+		return true;
+	}
+	
+	//returns true if move was possible, returns false if it isnt.
+	//Note this code doesn't do checks/checkmates yet, 
+	//Im planning to have separate detection for that
+	public boolean move(Piece p, int x, int y) {
+		if(p.getColor()%2!=curTurn%2||!p.getLegalMoves(this).contains(pieces[x][y])) {
+			return false;
+		}
+		p.move(pieces[x][y]);
+		curTurn = 1+curTurn;	
 		return true;
 	}
 	

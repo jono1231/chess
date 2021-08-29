@@ -2,12 +2,12 @@ package game;
 
 import java.util.List;
 
-public class Queen implements Piece {
-	private boolean color;
+public class Queen extends Piece {
+	private int color;
 	
 	
-	public Queen(boolean isWhite) {
-		color = isWhite;
+	public Queen(int color) {
+		this.color = color;
 	}
 	
 	@Override
@@ -17,7 +17,7 @@ public class Queen implements Piece {
 	}
 
 	@Override
-	public boolean getColor() {
+	public int getColor() {
 		// TODO Auto-generated method stub
 		return color;
 	}
