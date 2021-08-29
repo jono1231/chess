@@ -3,34 +3,15 @@ package game;
 import java.util.List;
 
 public class King extends Piece {
-	private int color;
 	
-	public King(int isWhite) {
-		color = isWhite;
+	public King(int isWhite, Square sqr) {
+		super(isWhite,sqr);
 	}
 	
 	@Override
 	public boolean move(Square s) {
 		// TODO Auto-generated method stub
 		return false;
-	}
-
-	@Override
-	public int getColor() {
-		// TODO Auto-generated method stub
-		return color;
-	}
-
-	@Override
-	public void draw() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void isCaptured() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

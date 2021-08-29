@@ -30,7 +30,7 @@ public class Square {
 	public int getX() {
 		return x;
 	}
-	private int getY() {
+	public int getY() {
 		return y;
 	}
 	
@@ -38,7 +38,7 @@ public class Square {
 	//returns false if isn't
 	//IMPORTANT: This method assumes that piece can legally move to the square
 	public boolean setPiece(Piece p) {
-		if(occPiece == null) {
+		if(occPiece == null || occPiece.getColor() == 0) {
 			occPiece = p;
 			return true;
 		}

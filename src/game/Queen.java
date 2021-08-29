@@ -3,35 +3,16 @@ package game;
 import java.util.List;
 
 public class Queen extends Piece {
-	private int color;
 	
 	
-	public Queen(int color) {
-		this.color = color;
+	public Queen(int color, Square sqr) {
+		super(color,sqr);
 	}
 	
 	@Override
 	public boolean move(Square s) {
 		// TODO Auto-generated method stub
 		return false;
-	}
-
-	@Override
-	public int getColor() {
-		// TODO Auto-generated method stub
-		return color;
-	}
-
-	@Override
-	public void draw() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void isCaptured() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override

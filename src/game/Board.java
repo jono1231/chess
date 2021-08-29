@@ -17,6 +17,7 @@ public class Board {
     	for(int i = 0; i < 8; i++) {
     		for(int j = 0; j < 8; j++) {
     			pieces[i][j] = new Square(i,j,null,this);
+    			pieces[i][j].setPiece(new Piece(0, pieces[i][j]));
     		}
     	}
     	populateBoard();
@@ -44,56 +45,38 @@ public class Board {
 	//TODO: add coords later
 	private void populateBoard() {
 		//Pawns
-    	for(int i = 0; i < pieces.length; i++) {
-    		Square wPawn = new Square(1,i,new Pawn(1),this);
-    		Square bPawn = new Square(6,i,new Pawn(2),this);
-    		
-    		pieces[1][i] = wPawn;
-    		pieces[6][i] = bPawn;
-    	}
-    	
-    	//Kings
-    	Square wKing = new Square(0,4,new King(1), this);
-    	Square bKing = new Square(7,4,new King(2), this);
-    	pieces[0][4] = wKing;
-    	pieces[7][4] = bKing;
-    	
-    	//Queens
-    	Square wQueen = new Square(0,3,new Queen(1), this);
-    	Square bQueen = new Square(7,3,new Queen(2), this);
-    	pieces[0][3] = wQueen;
-    	pieces[7][3] = bQueen;
-    	
-    	//Knights
-    	Square wKnight1 = new Square(0,1,new Knight(1), this);
-    	Square bKnight1 = new Square(7,1,new Knight(2), this);
-    	Square wKnight2 = new Square(0,6,new Knight(1), this);
-    	Square bKnight2 = new Square(7,6,new Knight(2), this);
-    	pieces[0][1] = wKnight1;
-    	pieces[7][1] = bKnight1;
-    	pieces[0][6] = wKnight2;
-    	pieces[7][6] = bKnight2;
-    	
-    	//Rooks
-    	Square wRook1 = new Square(0,0,new Rook(1,0,0), this);
-    	Square bRook1 = new Square(7,0,new Rook(2,7,0), this);
-    	Square wRook2 = new Square(0,7,new Rook(1,0,7), this);
-    	Square bRook2 = new Square(7,7,new Rook(2,7,7), this);
-    	pieces[0][0] = wRook1;
-    	pieces[7][0] = bRook1;
-    	pieces[0][7] = wRook2;
-    	pieces[7][7] = bRook2;
+        for (int x = 0; x < 8; x++) {
+            pieces[1][x].setPiece(new Pawn(0, pieces[1][x]));
+            pieces[6][x].setPiece(new Pawn(1, pieces[6][x]));
+        }
+        
+        //Queens
+        pieces[7][3].setPiece(new Queen(1, pieces[7][3]));
+        pieces[0][3].setPiece(new Queen(0, pieces[0][3]));
+        
+        //Kings (need special treatment)
+        King bk = new King(0, pieces[0][4]);
+        King wk = new King(1, pieces[7][4]);
+        pieces[0][4].setPiece(bk);
+        pieces[7][4].setPiece(wk);
 
-    	
-    	//Bishops
-    	Square wBish1 = new Square(0,2,new Bishop(1), this);
-    	Square bBish1 = new Square(7,2,new Bishop(2), this);
-    	Square wBish2 = new Square(0,5,new Bishop(1), this);
-    	Square bBish2 = new Square(7,5,new Bishop(2), this);
-    	pieces[0][2] = wBish1;
-    	pieces[7][2] = bBish1;
-    	pieces[0][5] = wBish2;
-    	pieces[7][5] = bBish2;
+        //Rooks
+        pieces[0][0].setPiece(new Rook(0, pieces[0][0]));
+        pieces[0][7].setPiece(new Rook(0, pieces[0][7]));
+        pieces[7][0].setPiece(new Rook(1, pieces[7][0]));
+        pieces[7][7].setPiece(new Rook(1, pieces[7][7]));
+
+        //Knights
+        pieces[0][1].setPiece(new Knight(0, pieces[0][1]));
+        pieces[0][6].setPiece(new Knight(0, pieces[0][6]));
+        pieces[7][1].setPiece(new Knight(1, pieces[7][1]));
+        pieces[7][6].setPiece(new Knight(1, pieces[7][6]));
+
+        //Bishops
+        pieces[0][2].setPiece(new Bishop(0, pieces[0][2]));
+        pieces[0][5].setPiece(new Bishop(0, pieces[0][5]));
+        pieces[7][2].setPiece(new Bishop(1, pieces[7][2]));
+        pieces[7][5].setPiece(new Bishop(1, pieces[7][5]));
 	}
 	
 	private void addPiecesToList() {

@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Piece{
 	private int color;
+	private Square curSquare;
 	
-	
-	public Piece() {
+	public Piece(int color, Square curSquare) {
 		
 	}
 	
@@ -23,6 +23,10 @@ public class Piece{
 		
 	}
 	
+	public Square getCurSquare() {
+		return curSquare;
+	}
+	
 	//In theory this returns for all places a piece can move
 	//Null if the square is empty, and a piece if it isn't
 	public List<Square> getLegalMoves(Board b){
@@ -32,7 +36,7 @@ public class Piece{
 		return "";
 	}
 	
-	private int[] getLinearOccupations(Square[][] board, int x, int y) {
+	protected int[] getLinearOccupations(Square[][] board, int x, int y) {
 		   int lastYabove = 0;
 		   int lastXright = 7;
 		   int lastYbelow = 7;

@@ -4,34 +4,14 @@ import java.util.List;
 
 public class Bishop extends Piece {
 
-	private int color;
-	
-	public Bishop(int isWhite) {
-		color = isWhite;
+	public Bishop(int isWhite, Square pieces) {
+		super(isWhite,pieces);
 	}
 	
 	@Override
 	public boolean move(Square s) {
 		// TODO Auto-generated method stub
 		return false;
-	}
-
-	@Override
-	public int getColor() {
-		// TODO Auto-generated method stub
-		return color;
-	}
-
-	@Override
-	public void draw() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void isCaptured() {
-		// TODO Auto-generated method stub
-
 	}
 
 	@Override
