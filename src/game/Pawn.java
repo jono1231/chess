@@ -3,6 +3,8 @@ package game;
 import java.util.List;
 
 public class Pawn extends Piece{
+	private boolean moved = false;
+	
 	
 	//Constructor method
 	public Pawn(int color, Square sqr) {

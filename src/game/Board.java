@@ -138,9 +138,10 @@ public class Board {
 		curTurn = 1+curTurn;	
 		return true;
 	}
-	
+		
 	public static void main(String[] args) {
 		Board b = new Board();
+		System.out.print(b.getSquare(0, 0).getPiece().getLegalMoves(b).size());
 		b.printBoard();
 	}
 }

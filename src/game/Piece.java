@@ -6,8 +6,9 @@ public class Piece{
 	private int color;
 	private Square curSquare;
 	
-	public Piece(int color, Square curSquare) {
-		
+	public Piece(int col, Square sqr) {
+		color = col;
+		curSquare = sqr;
 	}
 	
 	public boolean move(Square s) {
