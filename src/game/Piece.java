@@ -24,6 +24,10 @@ public class Piece{
 		
 	}
 	
+	public int getType() {
+		return -1;
+	}
+	
 	public Square getCurSquare() {
 		return curSquare;
 	}
