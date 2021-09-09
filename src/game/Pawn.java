@@ -30,6 +30,13 @@ public class Pawn extends Piece{
 		return "p";
 	}
 	
-	
+	public int getType() {
+		if (this.getColor() == 0) {
+			return 10;
+		}
+		else {
+			return 11;
+		}
+	}
 
 }
