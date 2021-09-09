@@ -24,4 +24,11 @@ public class Knight extends Piece{
 		return "N";
 	}
 	
+	public int getType() {
+		if (this.getColor() == 0) {
+			return 30;
+		}
+		else {
+			return 31;
+		}
 }
