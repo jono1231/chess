@@ -24,5 +24,14 @@ public class Queen extends Piece {
 	public String toString() {
 		return "Q";
 	}
+	
+	public int getType() {
+		if (this.getColor() == 0) {
+			return 50;
+		}
+		else {
+			return 51;
+		}
+	}
 
 }

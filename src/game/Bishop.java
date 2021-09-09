@@ -23,5 +23,14 @@ public class Bishop extends Piece {
 	public String toString() {
 		return "B";
 	}
+	
+	public int getType() {
+		if (this.getColor() == 0) {
+			return 40;
+		}
+		else {
+			return 41;
+		}
+	}
 
 }
