@@ -10,7 +10,7 @@ import java.util.Random;
 Graphics for chess board
 draws board rn not done
 */
-public class MyCanvas extends JPanel
+public class BoardGraphics extends JPanel
 {
    // Define the grid
    private boolean[][] grid = new boolean[100][100];
@@ -20,11 +20,11 @@ public class MyCanvas extends JPanel
 
    
    /**
-   Constructor for our MyCanvas class
+   Constructor for our BoardGraphics class
    Sets up the screen correctly with all the variables
    and properties to consider
    */
-   public MyCanvas()
+   public BoardGraphics()
    {
       setSize(new Dimension(500, 500));
       setPreferredSize(new Dimension(500,500));
@@ -54,6 +54,7 @@ public class MyCanvas extends JPanel
    */
    public void drawBoard(Graphics2D g2, boolean[][] grid)
    {
+	  //Square[][] pieces = Board.getBoardState();
       boolean color = false;
       int y = 0;
       for (int i = 0; i < 8; i++)
@@ -61,6 +62,7 @@ public class MyCanvas extends JPanel
          int x = 0;
          for (int j = 0; j < 8; j++)
          {
+        	// draw squares
             Rectangle2D.Double rect = new Rectangle2D.Double(x,y,100,100);
             g2.draw(rect);
             x += 100;
@@ -74,6 +76,8 @@ public class MyCanvas extends JPanel
                g2.fill(rect);
                color = true;
             }
+            
+            //draw pieces
          }
          y += 100;
          color = !color;
@@ -141,7 +145,7 @@ public class MyCanvas extends JPanel
       myFrame.setSize(new Dimension(800,800));
       myFrame.setPreferredSize(new Dimension(800,800));
       myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      myFrame.add(new MyCanvas());
+      myFrame.add(new BoardGraphics());
       myFrame.pack();
       myFrame.setVisible(true);
    }
