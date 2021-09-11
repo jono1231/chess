@@ -111,7 +111,6 @@ public class BoardGraphics extends JPanel
             default: pieceString = "";
             		break;
             }
-            g2.setColor(Color.BLACK);
             g2.drawString(pieceString,x-80,y+80);
             System.out.println(x);
          }
