@@ -17,7 +17,7 @@ public class BoardGraphics extends JPanel
    
    // Define thread variable for animation
    private Thread anim = new Thread(new UpdateScreen());
-
+   private Board chessboard;
    
    /**
    Constructor for our BoardGraphics class
@@ -30,6 +30,8 @@ public class BoardGraphics extends JPanel
       setPreferredSize(new Dimension(500,500));
       setVisible(true);
       // Initialize the board
+      chessboard = new Board();
+      System.out.println(chessboard);
       // Start the animation
       // The animation updates the board and updates
       // the screen continually...
@@ -67,12 +69,12 @@ public class BoardGraphics extends JPanel
             g2.draw(rect);
             x += 100;
             if (color){
-               g2.setColor(Color.BLACK);
+               g2.setColor(new Color(184,139,74));
                g2.fill(rect);
                color = false;
             }
             else {
-               g2.setColor(Color.WHITE);
+               g2.setColor(new Color(227,193,111));
                g2.fill(rect);
                color = true;
             }
@@ -101,7 +103,7 @@ public class BoardGraphics extends JPanel
       {
          while(true)
          {  
-            System.out.println("RUNNING");
+            //System.out.println("RUNNING");
             try
             {
                Thread.sleep(60);
