@@ -25,11 +25,6 @@ public class Knight extends Piece{
 	}
 	
 	public int getType() {
-		if (this.getColor() == 0) {
-			return 30;
-		}
-		else {
-			return 31;
-		}
+		return 3;
 	}
 }

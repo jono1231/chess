@@ -25,11 +25,6 @@ public class King extends Piece {
 	}
 
 	public int getType() {
-		if (this.getColor() == 0) {
-			return 60;
-		}
-		else {
-			return 61;
-		}
+		return 6;
 	}
 }

@@ -59,6 +59,8 @@ public class BoardGraphics extends JPanel
 	  //Square[][] pieces = Board.getBoardState();
       boolean color = false;
       int y = 0;
+      Square[][] pieces = chessboard.getBoardState();
+      int piece;
       for (int i = 0; i < 8; i++)
       {
          int x = 0;
@@ -80,6 +82,38 @@ public class BoardGraphics extends JPanel
             }
             
             //draw pieces
+            piece = pieces[i][j].getPiece().getType();
+            int pieceColor = pieces[i][j].getPiece().getColor();
+            String pieceString = ""; //temporary until piece drawings
+            
+            if (pieceColor == 0) {
+            	g2.setColor(Color.WHITE);
+            }
+            else {
+            	g2.setColor(Color.BLACK);
+            }
+            Font font = new Font("Serif", Font.PLAIN, 90);
+            g2.setFont(font);
+            
+            switch (piece) {
+            case 1: pieceString = "P";
+            		break;
+            case 2: pieceString = "R";
+            		break;
+            case 3: pieceString = "N";
+            		break;
+            case 4: pieceString = "B";
+            		break;
+            case 5: pieceString = "Q";
+            		break;
+            case 6: pieceString = "K";
+            		break;
+            default: pieceString = "";
+            		break;
+            }
+            g2.setColor(Color.BLACK);
+            g2.drawString(pieceString,x-80,y+80);
+            System.out.println(x);
          }
          y += 100;
          color = !color;

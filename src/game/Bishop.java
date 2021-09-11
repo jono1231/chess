@@ -25,12 +25,6 @@ public class Bishop extends Piece {
 	}
 	
 	public int getType() {
-		if (this.getColor() == 0) {
-			return 40;
-		}
-		else {
-			return 41;
-		}
+		return 4;
 	}
-
 }

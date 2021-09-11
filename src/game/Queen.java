@@ -26,12 +26,7 @@ public class Queen extends Piece {
 	}
 	
 	public int getType() {
-		if (this.getColor() == 0) {
-			return 50;
-		}
-		else {
-			return 51;
-		}
+		return 5;
 	}
 
 }

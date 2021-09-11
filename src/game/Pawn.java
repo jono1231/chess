@@ -31,12 +31,7 @@ public class Pawn extends Piece{
 	}
 	
 	public int getType() {
-		if (this.getColor() == 0) {
-			return 10;
-		}
-		else {
-			return 11;
-		}
+		return 1;
 	}
 
 }

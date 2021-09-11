@@ -42,12 +42,7 @@ public class Rook extends Piece {
 	}
 	
 	public int getType() {
-		if (this.getColor() == 0) {
-			return 20;
-		}
-		else {
-			return 21;
-		}
+		return 2;
 	}
 
 }
