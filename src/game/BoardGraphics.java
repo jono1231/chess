@@ -2,9 +2,9 @@ package game;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.*;
-import java.util.Random;
 
 /**
 Graphics for chess board
@@ -31,6 +31,8 @@ public class BoardGraphics extends JPanel
       setVisible(true);
       // Initialize the board
       chessboard = new Board();
+      MyMouseAdapter adapter = new MyMouseAdapter();
+      this.addMouseListener(adapter);
       System.out.println(chessboard);
       // Start the animation
       // The animation updates the board and updates
@@ -112,7 +114,7 @@ public class BoardGraphics extends JPanel
             		break;
             }
             g2.drawString(pieceString,x-80,y+80);
-            System.out.println(x);
+//            System.out.println(x);
          }
          y += 100;
          color = !color;
@@ -170,6 +172,8 @@ public class BoardGraphics extends JPanel
       drawBoard(g2, grid);
    }
    
+   
+   
    /**
    Main Method
    Makes a new JFrame and adds the Canvas to it
@@ -185,4 +189,20 @@ public class BoardGraphics extends JPanel
       myFrame.setVisible(true);
    }
 
+}
+class MyMouseAdapter extends MouseAdapter {
+    @Override
+    public void mousePressed(MouseEvent e) {
+        System.out.printf("Mouse Pressed at: %s%n", e.getPoint());
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        System.out.printf("Mouse Released at: %s%n", e.getPoint());
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        System.out.printf("Mouse Dragged at: %s%n", e.getPoint());
+    }
 }
