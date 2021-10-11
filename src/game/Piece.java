@@ -82,6 +82,7 @@ public class Piece{
 		return occups;
 	}
 	
+	//TODO: Make it actually diagonal (rn its not)
 	protected int[] getDiagonalOccupations(Square[][] board, int x, int y) {
 		int lastYabove = 0;
 		int lastXright = 7;
@@ -125,4 +126,5 @@ public class Piece{
 		int[] occups = {lastYabove, lastYbelow, lastXleft, lastXright};
 		return occups;	
 	}
+	
 }

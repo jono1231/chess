@@ -14,6 +14,7 @@ public class BoardGraphics extends JPanel
 {
    // Define the grid
    private boolean[][] grid = new boolean[100][100];
+
    
    // Define thread variable for animation
    private Thread anim = new Thread(new UpdateScreen());
@@ -96,7 +97,8 @@ public class BoardGraphics extends JPanel
             }
             Font font = new Font("Serif", Font.PLAIN, 90);
             g2.setFont(font);
-            
+  
+            //Beautiful code
             switch (piece) {
             case 1: pieceString = "P";
             		break;
@@ -191,9 +193,12 @@ public class BoardGraphics extends JPanel
 
 }
 class MyMouseAdapter extends MouseAdapter {
+	//row col definitions:
+	private String[] cols = new String[]{"a","b","c","d","e","f","g","h"};
+	
     @Override
     public void mousePressed(MouseEvent e) {
-        System.out.printf("Mouse Pressed at: %s%n", e.getPoint());
+        System.out.println("Mouse clicked at: " + cols[e.getX()/100] + e.getY()/100);
     }
 
     @Override

@@ -51,14 +51,14 @@ public class Board {
         }
         
         //Queens
-        pieces[7][3].setPiece(new Queen(1, pieces[7][3]));
-        pieces[0][3].setPiece(new Queen(0, pieces[0][3]));
+        pieces[7][3].setPiece(new Queen(1, pieces[7][4]));
+        pieces[0][3].setPiece(new Queen(0, pieces[0][4]));
         
         //Kings (need special treatment)
-        King bk = new King(0, pieces[0][4]);
-        King wk = new King(1, pieces[7][4]);
-        pieces[0][4].setPiece(bk);
-        pieces[7][4].setPiece(wk);
+        King bk = new King(0, pieces[0][3]);
+        King wk = new King(1, pieces[7][3]);
+        pieces[7][3].setPiece(bk);
+        pieces[0][3].setPiece(wk);
 
         //Rooks
         pieces[0][0].setPiece(new Rook(0, pieces[0][0]));
