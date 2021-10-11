@@ -212,7 +212,12 @@ public class BoardGraphics extends JPanel
 
 	    @Override
 	    public void mouseReleased(MouseEvent e) {
-	        System.out.printf("Mouse Released at: %s%n", e.getPoint());
+	    	int xPress = e.getX()/100;
+	    	int yPress = (800-e.getY())/100;
+	    	
+	    	if(xPress != lastX && yPress != lastY){
+	    		System.out.println(curPiece.move(chessboard.getSquare(yPress, xPress)));
+	    	}
 	    }
 
 	    @Override
