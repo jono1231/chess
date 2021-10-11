@@ -70,9 +70,9 @@ public class BoardGraphics extends JPanel
          for (int j = 0; j < 8; j++)
          {
         	// draw squares
-            Rectangle2D.Double rect = new Rectangle2D.Double(x,y,100,100);
+            Rectangle2D.Double rect = new Rectangle2D.Double(x,y,80,80);
             g2.draw(rect);
-            x += 100;
+            x += 80;
             if (color){
                g2.setColor(new Color(184,139,74));
                g2.fill(rect);
@@ -95,7 +95,7 @@ public class BoardGraphics extends JPanel
             else {
             	g2.setColor(Color.BLACK);
             }
-            Font font = new Font("Serif", Font.PLAIN, 90);
+            Font font = new Font("Serif", Font.PLAIN, 80);
             g2.setFont(font);
   
             //Beautiful code
@@ -115,10 +115,10 @@ public class BoardGraphics extends JPanel
             default: pieceString = "";
             		break;
             }
-            g2.drawString(pieceString,x-80,y+80);
+            g2.drawString(pieceString,x-65,y+70);
 //            System.out.println(x);
          }
-         y += 100;
+         y += 80;
          color = !color;
       }
       
