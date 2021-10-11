@@ -110,7 +110,7 @@ public class Board {
 		return moves;
 	}
 	
-	public Square getSquare(int x, int y) {
+	public Square getSquare(int y, int x) {
 		return pieces[x][y];
 	}
 	
