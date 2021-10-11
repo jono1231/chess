@@ -190,24 +190,26 @@ public class BoardGraphics extends JPanel
       myFrame.pack();
       myFrame.setVisible(true);
    }
+   private class MyMouseAdapter extends MouseAdapter {
+		//row col definitions:
+		private String[] cols = new String[]{"a","b","c","d","e","f","g","h"};
+		
+	    @Override
+	    public void mousePressed(MouseEvent e) {
+	    	int xPress = e.getX()/100;
+	    	int yPress = (800-e.getY())/100;
+	        System.out.println("Mouse clicked at: " + cols[xPress] + (1+yPress));
+	        System.out.println("Piece on square: " + chessboard.getSquare(xPress,yPress).getPiece());
+	    }
 
-}
-class MyMouseAdapter extends MouseAdapter {
-	//row col definitions:
-	private String[] cols = new String[]{"a","b","c","d","e","f","g","h"};
-	
-    @Override
-    public void mousePressed(MouseEvent e) {
-        System.out.println("Mouse clicked at: " + cols[e.getX()/100] + e.getY()/100);
-    }
+	    @Override
+	    public void mouseReleased(MouseEvent e) {
+	        System.out.printf("Mouse Released at: %s%n", e.getPoint());
+	    }
 
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        System.out.printf("Mouse Released at: %s%n", e.getPoint());
-    }
-
-    @Override
-    public void mouseDragged(MouseEvent e) {
-        System.out.printf("Mouse Dragged at: %s%n", e.getPoint());
-    }
+	    @Override
+	    public void mouseDragged(MouseEvent e) {
+	        System.out.printf("Mouse Dragged at: %s%n", e.getPoint());
+	    }
+	}
 }

@@ -46,47 +46,47 @@ public class Board {
 	private void populateBoard() {
 		//Pawns
         for (int x = 0; x < 8; x++) {
-            pieces[1][x].setPiece(new Pawn(0, pieces[1][x]));
-            pieces[6][x].setPiece(new Pawn(1, pieces[6][x]));
+            pieces[6][x].setPiece(new Pawn(0, pieces[6][x]));
+            pieces[1][x].setPiece(new Pawn(1, pieces[1][x]));
         }
         
         //Queens
-        pieces[7][3].setPiece(new Queen(1, pieces[7][4]));
-        pieces[0][3].setPiece(new Queen(0, pieces[0][4]));
+        pieces[0][3].setPiece(new Queen(1, pieces[0][3]));
+        pieces[7][3].setPiece(new Queen(0, pieces[7][3]));
         
         //Kings (need special treatment)
-        King bk = new King(0, pieces[0][3]);
-        King wk = new King(1, pieces[7][3]);
-        pieces[7][3].setPiece(bk);
-        pieces[0][3].setPiece(wk);
+        King bk = new King(0, pieces[7][4]);
+        King wk = new King(1, pieces[0][4]);
+        pieces[7][4].setPiece(bk);
+        pieces[0][4].setPiece(wk);
 
         //Rooks
-        pieces[0][0].setPiece(new Rook(0, pieces[0][0]));
-        pieces[0][7].setPiece(new Rook(0, pieces[0][7]));
-        pieces[7][0].setPiece(new Rook(1, pieces[7][0]));
-        pieces[7][7].setPiece(new Rook(1, pieces[7][7]));
+        pieces[7][0].setPiece(new Rook(0, pieces[7][0]));
+        pieces[7][7].setPiece(new Rook(0, pieces[7][7]));
+        pieces[0][0].setPiece(new Rook(1, pieces[0][0]));
+        pieces[0][7].setPiece(new Rook(1, pieces[0][7]));
 
         //Knights
-        pieces[0][1].setPiece(new Knight(0, pieces[0][1]));
-        pieces[0][6].setPiece(new Knight(0, pieces[0][6]));
-        pieces[7][1].setPiece(new Knight(1, pieces[7][1]));
-        pieces[7][6].setPiece(new Knight(1, pieces[7][6]));
+        pieces[7][1].setPiece(new Knight(0, pieces[7][1]));
+        pieces[7][6].setPiece(new Knight(0, pieces[7][6]));
+        pieces[0][1].setPiece(new Knight(1, pieces[0][1]));
+        pieces[0][6].setPiece(new Knight(1, pieces[0][6]));
 
         //Bishops
-        pieces[0][2].setPiece(new Bishop(0, pieces[0][2]));
-        pieces[0][5].setPiece(new Bishop(0, pieces[0][5]));
-        pieces[7][2].setPiece(new Bishop(1, pieces[7][2]));
-        pieces[7][5].setPiece(new Bishop(1, pieces[7][5]));
+        pieces[7][2].setPiece(new Bishop(0, pieces[7][2]));
+        pieces[7][5].setPiece(new Bishop(0, pieces[7][5]));
+        pieces[0][2].setPiece(new Bishop(1, pieces[0][2]));
+        pieces[0][5].setPiece(new Bishop(1, pieces[0][5]));
 	}
 	
 	private void addPiecesToList() {
 		wPieces = new LinkedList<Piece>();
 		bPieces = new LinkedList<Piece>();
 		for(int i = 0; i < 7; i++) {
-			wPieces.add(pieces[0][i].getPiece());
-			wPieces.add(pieces[1][i].getPiece());
-			bPieces.add(pieces[6][i].getPiece());
-			bPieces.add(pieces[7][i].getPiece());
+			bPieces.add(pieces[0][i].getPiece());
+			bPieces.add(pieces[1][i].getPiece());
+			wPieces.add(pieces[6][i].getPiece());
+			wPieces.add(pieces[7][i].getPiece());
 		}
 	}
 	
