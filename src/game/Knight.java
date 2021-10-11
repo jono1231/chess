@@ -21,7 +21,7 @@ public class Knight extends Piece{
 	}
 	
 	public String toString() {
-		return "N";
+		return super.toString() + "N";
 	}
 	
 	public int getType() {

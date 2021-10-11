@@ -21,7 +21,7 @@ public class King extends Piece {
 	}
 
 	public String toString() {
-		return "K";
+		return super.toString() +  "K";
 	}
 
 	public int getType() {

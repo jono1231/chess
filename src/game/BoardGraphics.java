@@ -195,14 +195,17 @@ public class BoardGraphics extends JPanel
 		private String[] cols = new String[]{"a","b","c","d","e","f","g","h"};
 		private int lastX;
 		private int lastY;
+		private Piece curPiece;
 		
 	    @Override
 	    public void mousePressed(MouseEvent e) {
 	    	int xPress = e.getX()/100;
 	    	int yPress = (800-e.getY())/100;
+	    	Piece p = chessboard.getSquare(xPress,yPress).getPiece();
 	        System.out.println("Mouse clicked at: " + cols[xPress] + (1+yPress));
-	        System.out.println("Piece on square: " + chessboard.getSquare(xPress,yPress).getPiece());
+	        System.out.println("Piece on square: " + p);
 	        
+	        curPiece = p;
 	        lastX = xPress;
 	        lastY = yPress;
 	    }

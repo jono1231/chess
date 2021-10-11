@@ -21,7 +21,7 @@ public class Bishop extends Piece {
 	}
 	
 	public String toString() {
-		return "B";
+		return super.toString() +  "B";
 	}
 	
 	public int getType() {

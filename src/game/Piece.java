@@ -38,9 +38,6 @@ public class Piece{
 	public List<Square> getLegalMoves(Board b){
 		return null;
 	}
-	public String toString() {
-		return "";
-	}
 	
 	protected int[] getLinearOccupations(Square[][] board, int x, int y) {
 		int lastYabove = 0;
@@ -127,4 +124,9 @@ public class Piece{
 		return occups;	
 	}
 	
+	public String toString() {
+		if(color == 1) {return "white ";}
+		if(color == 0) {return "black ";}
+		return "";
+	}
 }

@@ -22,7 +22,7 @@ public class Queen extends Piece {
 	}
 	
 	public String toString() {
-		return "Q";
+		return super.toString() +  "Q";
 	}
 	
 	public int getType() {

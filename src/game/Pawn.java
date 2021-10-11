@@ -27,7 +27,7 @@ public class Pawn extends Piece{
 	}
 	
 	public String toString() {
-		return "p";
+		return super.toString() + "p";
 	}
 	
 	public int getType() {
