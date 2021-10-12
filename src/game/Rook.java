@@ -11,7 +11,6 @@ public class Rook extends Piece {
 	
 	//Move method
 	public boolean move(Square s) {
-		if(getLegalMoves())
 		return s.setPiece(this);
 	}
 
