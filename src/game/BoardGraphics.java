@@ -214,8 +214,8 @@ public class BoardGraphics extends JPanel
 	    public void mouseReleased(MouseEvent e) {
 	    	int xPress = e.getX()/100;
 	    	int yPress = (800-e.getY())/100;
-	    	
-	    	if(xPress != lastX && yPress != lastY){
+	    		    	
+	    	if(xPress != lastX || yPress != lastY){
 	    		System.out.println(curPiece.move(chessboard.getSquare(yPress, xPress)));
 	    	}
 	    }

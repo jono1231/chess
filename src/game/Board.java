@@ -17,7 +17,7 @@ public class Board {
     	for(int i = 0; i < 8; i++) {
     		for(int j = 0; j < 8; j++) {
     			pieces[i][j] = new Square(i,j,null,this);
-    			pieces[i][j].setPiece(new Piece(0, pieces[i][j]));
+    			pieces[i][j].setPiece(new Piece(2, pieces[i][j]));
     		}
     	}
     	populateBoard();
@@ -44,11 +44,11 @@ public class Board {
 	//Super dumb code
 	//TODO: add coords later
 	private void populateBoard() {
-		//Pawns
-        for (int x = 0; x < 8; x++) {
-            pieces[6][x].setPiece(new Pawn(0, pieces[6][x]));
-            pieces[1][x].setPiece(new Pawn(1, pieces[1][x]));
-        }
+//		//Pawns
+//        for (int x = 0; x < 8; x++) {
+//            pieces[6][x].setPiece(new Pawn(0, pieces[6][x]));
+//            pieces[1][x].setPiece(new Pawn(1, pieces[1][x]));
+//        }
         
         //Queens
         pieces[0][3].setPiece(new Queen(1, pieces[0][3]));
